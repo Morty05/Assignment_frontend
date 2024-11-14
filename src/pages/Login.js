@@ -12,7 +12,7 @@ function Login() {
     try {
       const data = { email, password };
       const response = await login(data); // Send login request to backend
-      console.log(response);
+      console.log('here',response);
 
       if (response.token) {
         localStorage.setItem('token', response.token); // Store JWT in localStorage

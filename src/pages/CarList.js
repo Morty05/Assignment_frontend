@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { getCars } from '../services/apiService'; // Ensure this function is correctly defined in your apiService
-
+import { useNavigate } from 'react-router-dom';
 function CarList() {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);  // Track loading state
   const [error, setError] = useState(null);  // Track errors
-
+  const navigate = useNavigate();  
   useEffect(() => {
     const fetchCars = async () => {
       try {
@@ -44,7 +44,8 @@ function CarList() {
         ))
       )}
 
-      
+<button onClick={() => navigate('/add-car')}>Add Car</button>
+
     </div>
   );
 }
